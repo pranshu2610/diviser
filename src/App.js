@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './App.scss';
+import Addition from './pages/addition/addition';
+import Welcome from './pages/welcome/welcome';
 
 function App() {
+  const [page,setPage] = useState(1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {page===1?<Welcome nextPage={()=>setPage(2)}/>:null}
+      {page===2?<Addition nextPage={()=>setPage(3)}/>:null}
     </div>
   );
 }

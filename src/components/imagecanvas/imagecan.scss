@@ -1,0 +1,18 @@
+.imgcanvas {
+    height: 500px;
+    width: 500px;
+    margin-top: -150px;
+    border-radius: 50px;
+    background: rgb(134,96,242);
+    background: linear-gradient(0deg, rgba(134,96,242,1) 0%, rgba(227,122,247,1) 100%);
+    transform: rotate(-10deg);
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        width: 120%;
+    }
+    .mainImg {
+        height: 300px;
+        width: 300px;
+        margin-top: 150px;
+    }
+}

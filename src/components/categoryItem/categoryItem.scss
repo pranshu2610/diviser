@@ -1,0 +1,19 @@
+.c-item {
+    border: rgb(209, 190, 255) 2px solid;
+    border-radius: 20px;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+    .c-img {
+        height: 70px;
+        width: 70px;
+    }
+    .c-name {
+        margin: 10px 0 0 0;
+        font-size: 18px;
+    }
+}

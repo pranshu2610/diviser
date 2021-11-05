@@ -1,0 +1,18 @@
+.button {
+    height: 60px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    &.purple {
+        background: rgb(144,62,255);
+        background: linear-gradient(90deg, rgba(144,62,255,1) 0%, rgba(183,56,255,1) 100%);
+    }
+    .button-text {
+        margin: 0;
+        font-size: 18px;
+    }
+}
