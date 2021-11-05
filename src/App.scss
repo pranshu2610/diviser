@@ -4,4 +4,7 @@
 .welcome-title {
   font-size: 45px;
   margin: 50px 0 0 0;
+  &.spacebelow {
+    margin-bottom: 30px;
+  }
 }

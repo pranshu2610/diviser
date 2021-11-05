@@ -1,0 +1,86 @@
+$greyish: rgb(141, 141, 141);
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    padding: 8px 30px;
+    margin: 5px 0;
+    border-radius: 10px;
+    width: 30%;
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        width: 50%;
+    }
+    &.marginbot {
+        margin-bottom: 20px;
+    }
+}
+.list-name {
+    margin: 0;
+    font-size: 20px;
+}
+.delete {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+.add-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    // background-color: rgb(0, 0, 0);
+    border: $greyish 3px solid ;
+    color: $greyish;
+    border-style: dashed;
+    padding: 8px 30px;
+    margin: 5px 0 20px 0;
+    border-radius: 10px;
+    width: 29%;
+    cursor: pointer;
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        width: 49%;
+    }
+}
+.edit-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-input {
+    -webkit-appearance: none;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding: 15px 0;
+    align-self: center;
+    width: 40%;
+    font-size: 20px;
+    line-height: 20px;
+    // margin: 10px 0;
+    background: black;
+    color: white;
+    &.short {
+        width: 100px;
+    }
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        width: 65%;
+      }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }

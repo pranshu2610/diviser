@@ -14,5 +14,12 @@
         height: 300px;
         width: 300px;
         margin-top: 150px;
+        animation: shake 3s;
+        animation-iteration-count: infinite;
     }
 }
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    50% { transform: translate(0px, 15px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+  }
