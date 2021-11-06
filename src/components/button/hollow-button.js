@@ -1,9 +1,9 @@
 import React from "react";
 import './button.scss'
 
-const HollowButton = ({name,action}) => {
+const HollowButton = ({name, selected,action}) => {
     return(
-        <div className="hollowbtn" onClick={action}>
+        <div className={`hollowbtn ${selected?'selected':''}`} onClick={action}>
             <p className='btn-text'>{name}</p>
         </div>
     )

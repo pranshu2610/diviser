@@ -2,6 +2,10 @@
 
 ### TODO
 - [X] Welcome Page
-- [ ] Add Friends 
-- [ ] Ongoing => how much amt contributed => Split 
-- [ ] Stats => Split
+- [X] Add Friends 
+- [X] Ongoing => how much amt contributed => Split 
+- [X] Stats => Split
+- [ ] Redux Toolkit
+- [ ] Static Functionality
+- [ ] Algorithm Discussion
+- [ ] Final Touches 🌟

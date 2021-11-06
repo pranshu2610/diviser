@@ -1,9 +1,9 @@
 import React from "react";
 import './categoryItem.scss';
 
-const CategoryItem = ({name,imgSrc}) => {
+const CategoryItem = ({name,imgSrc, selected, action}) => {
     return(
-        <div className="c-item">
+        <div onClick={action} className={`c-item ${selected?'selected':''}`}>
             <img className='c-img' alt={name} src={imgSrc}/>
             <p className="c-name">{name}</p>
         </div>

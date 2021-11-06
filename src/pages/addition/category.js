@@ -10,16 +10,17 @@ import './addition.scss';
 import Input from '../../components/input/input';
 
 const Category = ({nextPage}) => {
+    const [category,setCategory] = useState(0);
     return(
         <div className="addition">
             <div className="category-div">
-                <CategoryItem name="Trip" imgSrc={trip}/>
-                <CategoryItem name="Shop" imgSrc={shop}/>
-                <CategoryItem name="Movie" imgSrc={movie}/>
-                <CategoryItem name="Misc" imgSrc={misc}/>
+                <CategoryItem action={() => setCategory(0)} selected={category===0?true:false} name="Trip" imgSrc={trip}/>
+                <CategoryItem action={() => setCategory(1)} selected={category===1?true:false} name="Shop" imgSrc={shop}/>
+                <CategoryItem action={() => setCategory(2)} selected={category===2?true:false} name="Movie" imgSrc={movie}/>
+                <CategoryItem action={() => setCategory(3)} selected={category===3?true:false} name="Misc" imgSrc={misc}/>
             </div>
             <div className="input-space">
-            <Input placeholder="Give it a name like Goa's Trip" />
+        
             </div>
             <Button
                 button_text="Next"

@@ -3,3 +3,17 @@
     flex-direction: column;
     align-items: center;
 }
+.scrollable-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    height: 70vh;
+    margin-bottom: 20px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+.scrollable-div::-webkit-scrollbar {
+    display: none;
+  }
