@@ -11,8 +11,32 @@
         background: rgb(144,62,255);
         background: linear-gradient(90deg, rgba(144,62,255,1) 0%, rgba(183,56,255,1) 100%);
     }
-    .button-text {
+    &.short {
+        height: 50px;
+        width: 150px;
+    }
+    
+}
+.button-text {
+    margin: 0;
+    font-size: 18px;
+}
+.hollowbtn {
+    padding: 7px;
+    border: white 1px solid;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 70px;
+    .btn-text {
         margin: 0;
-        font-size: 18px;
+        font-size: 16px;
+    }
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+    &.selected {
+        background-color: white;
+        color: black;
     }
 }

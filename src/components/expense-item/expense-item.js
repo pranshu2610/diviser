@@ -5,7 +5,7 @@ const ExpenseItem = () => {
     return(
         <div className="expense-item">
             <div className="top-row">
-                <div className="top-tag">
+            <div className="top-tag" style={{backgroundColor: 'yellow'}}>
                     <p className="tag-letter">A</p>
                 </div>
                 <p className="item-amount">₹ 5000</p>
