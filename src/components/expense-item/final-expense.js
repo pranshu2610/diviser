@@ -1,35 +1,45 @@
 import React from 'react';
+import { labelObj } from '../../helper/labelAndCode';
 import './expense-item.scss';
 
-const FinalExpense = () => {
+const FinalExpense = ({name, events, get, pay}) => {
+
     return(
         <div className="expense-item">
             <div className="top-row">
                 <div className="top-row normal">
-                    <div className="top-tag" style={{backgroundColor: 'yellow'}}>
-                        <p className="tag-letter">A</p>
-                    </div>
-                    <div className="top-tag" style={{backgroundColor: '#fc194a'}}>
-                        <p className="tag-letter">B</p>
-                    </div>
-                    <div className="top-tag" style={{backgroundColor: '#19fc59'}}>
-                        <p className="tag-letter">C</p>
-                    </div>
-                    <p style={{margin: '0 2px'}}>+3</p>
+                {
+                    events.map(item => (
+                        <div className="top-tag" style={{backgroundColor: `${labelObj[item]}`}}>
+                            <p className="tag-letter">{item}</p>
+                        </div>
+                    ))
+                }
+                {
+                    events.length > 3 ? <p style={{margin: '0 2px'}}>{`+${events.length-3}`}</p> : null
+                }   
                 </div>
-                <p className="item-amount">Sneha</p>
+                <p className="item-amount">{name}</p>
             </div>
             <div className="top-row down">
                 <div className="short-list">
                     <p className="short-title">Need to Pay</p>
                     <div className="short-list">
-                        <p className="short-item">Pranshu ₹ 200</p>
+                        {
+                            Object.keys(pay).map(i => (
+                                <p className="short-item">{`${i} ₹ ${pay[i]}`}</p>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="short-list">
                     <p className="short-title">Will Receive</p>
                     <div className="short-list">
-                        <p className="short-item">All</p>
+                        {
+                            Object.keys(get).map(i => (
+                                <p className="short-item">{`${i} ₹ ${get[i]}`}</p>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
