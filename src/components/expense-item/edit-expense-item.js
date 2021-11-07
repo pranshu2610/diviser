@@ -28,7 +28,7 @@ const EditExpenseItem = () => {
     const dispatch = useDispatch()
 
     const options = [];
-    friends.map(item => {
+    friends.forEach(item => {
         options.push({value: item, label: item});
     })
 
@@ -97,33 +97,36 @@ const EditExpenseItem = () => {
                     <p className="short-title">Paid By</p>
                     <div className="short-list">
                         {
-                            ListPaidBy.map(item => (<p className="short-item">{`${item.name} ₹ ${item.amt}`}</p>))
+                            ListPaidBy.map(item => (<p key={item.name} className="short-item">{`${item.name} ₹ ${item.amt}`}</p>))
                         }
                     </div>
-                    <div className="top-row">
-                        <Select
-                            styles={customStyles}
-                            value={selectedOption}
-                            defaultValue={selectedOption}
-                            label="Select Name"
-                            onChange={setSelectedOption}
-                            options={options}
-                            theme={(theme) => ({
-                                ...theme,
-                                borderRadius: 10,
-                                colors: {
-                                ...theme.colors,
-                                  text: 'black',
-                                  primary25: 'black',
-                                  primary: 'black',
-                                },
-                            })}
-                        />
-                        <Input value={amount} action={setAmount} type={"number"} short={true} placeholder="Amt" />
-                        <div onClick={()=>addNewPayment()}>
-                            <img src={check} alt='del' className='delete' />
+                    {
+                        ListPaidBy.length > 0 ? null : 
+                        <div className="top-row">
+                            <Select
+                                styles={customStyles}
+                                value={selectedOption}
+                                defaultValue={selectedOption}
+                                label="Select Name"
+                                onChange={setSelectedOption}
+                                options={options}
+                                theme={(theme) => ({
+                                    ...theme,
+                                    borderRadius: 10,
+                                    colors: {
+                                    ...theme.colors,
+                                    text: 'black',
+                                    primary25: 'black',
+                                    primary: 'black',
+                                    },
+                                })}
+                            />
+                            <Input value={amount} action={setAmount} type={"number"} short={true} placeholder="Amt" />
+                            <div onClick={()=>addNewPayment()}>
+                                <img src={check} alt='del' className='delete' />
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
                 <div className="short-list stretch">
                     <p className="short-title">Shared with</p>
@@ -136,7 +139,7 @@ const EditExpenseItem = () => {
                         <div style={{width: '100%'}}>
                             <div className="short-list" style={{margin: '10px 0'}}>
                                 {
-                                    ListSharedBy.map(item => (<p className="short-item">{item}</p>))
+                                    ListSharedBy.map(item => (<p key={item} className="short-item">{item}</p>))
                                 }
                             </div>
                             <div className="top-row">

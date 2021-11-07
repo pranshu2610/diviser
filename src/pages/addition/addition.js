@@ -23,7 +23,7 @@ const Addition = ({nextPage}) => {
             <p className="welcome-title spacebelow">Add Friends</p>
             {
                 friendArray.map(item => (
-                    <ListItem name={item} originalSet={friends} deleteAction={addFriends}/>
+                    <ListItem key={item} name={item} originalSet={friends} deleteAction={addFriends}/>
                 ))
             }
             <AddListItem originalSet={friends} addAction={addFriends} />

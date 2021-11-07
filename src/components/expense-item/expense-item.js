@@ -15,7 +15,7 @@ const ExpenseItem = ({label,colorCode,totalAmt,paidBy,sharedWithAll,sharedBy}) =
                     <p className="short-title">Paid By</p>
                     <div className="short-list">
                         {
-                            paidBy.map(item => (<p className="short-item">{`${item.name} ₹ ${item.amt}`}</p>))
+                            paidBy.map(item => (<p key={item.name} className="short-item">{`${item.name} ₹ ${item.amt}`}</p>))
                         }
                     </div>
                 </div>
@@ -24,7 +24,7 @@ const ExpenseItem = ({label,colorCode,totalAmt,paidBy,sharedWithAll,sharedBy}) =
                     <div className="short-list">
                         {
                             sharedWithAll ? <p className="short-item">All</p> : 
-                            sharedBy.map(item => (<p className="short-item">{item}</p>))
+                            sharedBy.map(item => (<p key={item} className="short-item">{item}</p>))
                         }
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 export const algo = ({label, paidBy, sharedWithAll, sharedBy, totalAmt, friends, cache}) => {
     var output = [...cache];
+    var sharePerHead = 0;
     if (sharedWithAll) {
-        var sharePerHead = totalAmt/friends.length;
+        sharePerHead = totalAmt/friends.length;
         if (paidBy.length===1) {
-            friends.map(item => {
+            friends.forEach(item => {
                 if (item!==paidBy[0].name) {
                     let o = {
                         event: label,
@@ -17,9 +18,9 @@ export const algo = ({label, paidBy, sharedWithAll, sharedBy, totalAmt, friends,
         }
     }
     else {
-        var sharePerHead = totalAmt/(sharedBy.length+paidBy.length);
+        sharePerHead = totalAmt/(sharedBy.length+paidBy.length);
         if (paidBy.length===1) {
-            sharedBy.map(item => {
+            sharedBy.forEach(item => {
                 let o = {
                     event: label,
                     person: item,

@@ -3,14 +3,14 @@ import { labelObj } from '../../helper/labelAndCode';
 import './expense-item.scss';
 
 const FinalExpense = ({name, events, get, pay}) => {
-
+    let max3events = events.slice(0,3);
     return(
         <div className="expense-item">
             <div className="top-row">
                 <div className="top-row normal">
                 {
-                    events.map(item => (
-                        <div className="top-tag" style={{backgroundColor: `${labelObj[item]}`}}>
+                    max3events.map(item => (
+                        <div key={item} className="top-tag" style={{backgroundColor: `${labelObj[item]}`}}>
                             <p className="tag-letter">{item}</p>
                         </div>
                     ))
@@ -27,7 +27,7 @@ const FinalExpense = ({name, events, get, pay}) => {
                     <div className="short-list">
                         {
                             Object.keys(pay).map(i => (
-                                <p className="short-item">{`${i} ₹ ${pay[i]}`}</p>
+                                <p key={i} className="short-item">{`${i} ₹ ${pay[i]}`}</p>
                             ))
                         }
                     </div>
@@ -37,7 +37,7 @@ const FinalExpense = ({name, events, get, pay}) => {
                     <div className="short-list">
                         {
                             Object.keys(get).map(i => (
-                                <p className="short-item">{`${i} ₹ ${get[i]}`}</p>
+                                <p key={i} className="short-item">{`${i} ₹ ${get[i]}`}</p>
                             ))
                         }
                     </div>
